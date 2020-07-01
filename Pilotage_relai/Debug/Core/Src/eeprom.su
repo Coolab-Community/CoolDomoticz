@@ -1,0 +1,9 @@
+core_cm7.h:2518:22:SCB_CleanInvalidateDCache_by_Addr	32	static,ignoring_inline_asm
+eeprom.c:80:10:EE_Init	48	static
+eeprom.c:339:10:EE_VerifyPageFullyErased	24	static
+eeprom.c:377:10:EE_ReadVariable	32	static
+eeprom.c:436:10:EE_WriteVariable	24	static
+eeprom.c:460:26:EE_Format	32	static
+eeprom.c:514:17:EE_FindValidPage	24	static
+eeprom.c:586:17:EE_VerifyPageFullWriteVariable	40	static
+eeprom.c:647:17:EE_PageTransfer	56	static

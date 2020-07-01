@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+.menu {
+  float:left;
+  width:48%;
+  text-align:center;
+  margin:1%;
+  
+}
+
+.header {
+
+  
+}
+.button_menu {
+  float:right;
+  width:100;
+  text-align:center;
+}
+
+.menu a {
+  background-color:#e5e5e5;
+  padding:12px;
+  margin-top:7px;
+  display:block;
+  width:100%;
+  color:black;
+  float:left;
+}
+
+.bloc_button {
+  background-color:#e5e5e5;
+  padding:12px;
+  margin-top:7px;
+  margin-bottom:7px;
+ width:50%;
+  
+  display:block;
+  width:100%;
+  color:black;
+  
+}
+
+
+
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width:100%;
+  }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.buttonON {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  
+}
+
+.buttonOFF {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  }
+  .buttonSend {
+  background-color: Grey;
+  border: none;
+  color: white;
+  padding: 10px 40%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  
+}
+input[type=text] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+ 
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
+  
+</style>
+</head>
+<body style="font-family:Verdana;color:#ffff;">
+
+<div style="background-color:#1f618d;padding:5px;text-align:left;">
+<p id="status">Checking status...<p\>
+</div>
+<div style="background-color:#1f618d;padding:50px;text-align:center;">
+
+  <h1 class="connexion">Switch Manager</h1>
+</div>
+
+<div style="overflow:auto">
+  <div class="menu">        
+	<div class="bloc_button">
+    <p1>Switch 1</p1>
+    </div> 
+    <label class="switch">
+  <input id="SW1" type="checkbox" onclick="SendState()">
+  <span class="slider"></span>
+</label>
+</div> 
+<div class="menu">        
+	<div class="bloc_button">
+    <p1>Switch 2</p1>
+    </div> 
+    <label class="switch">
+  <input id="SW2" type="checkbox" onclick="SendState()">
+  <span class="slider"></span>
+</label>
+</div> 
+
+<div class="menu">        
+	<div class="bloc_button">
+    <p1>Switch 3</p1>
+    </div> 
+    <label class="switch">
+  <input id="SW3" type="checkbox" onclick="SendState()">
+  <span class="slider"></span>
+</label>
+</div>    
+
+<div class="menu">        
+	<div class="bloc_button">
+    <p1>Switch 4</p1>
+    </div> 
+    <label class="switch">
+  <input id="SW4" type="checkbox" onclick="SendState()">
+  <span class="slider"></span>
+</label>
+</div>    
+
+<div class="menu">        
+	<div class="bloc_button">
+    <p1>Switch 5</p1>
+    </div> 
+    <label class="switch">
+  <input id="SW5" type="checkbox" onclick="SendState()">
+  <span class="slider"></span>
+</label>
+</div>    
+
+<div class="menu">        
+	<div class="bloc_button">
+    <p1>Switch 6</p1>
+    </div> 
+    <label  class="switch">
+  <input id="SW6" type="checkbox" onclick="SendState()">
+  <span class="slider"></span>
+</label>
+</div>    
+
+<div class="menu">        
+	<div class="bloc_button">
+    <p1>Switch 7</p1>
+    </div> 
+    <label class="switch">
+  <input id="SW7" type="checkbox" onclick="SendState()">
+  <span class="slider"></span>
+</label>
+</div> 
+
+<div class="menu">        
+	<div class="bloc_button">
+    <p1>Switch 8</p1>
+    </div> 
+    <label class="switch">
+  <input id="SW8" type="checkbox"  onclick="SendState()">
+  <span class="slider"></span>
+</label>
+</div>    
+</div>
+
+<div style="background-color:#1f618d;padding:20px;text-align:center;">
+  <h3>More options...</h3>
+<h3 id="demo"></h3>
+</div>
+
+<div class="menu">        
+	<div class="bloc_button">
+    
+    <p1>Change IP address</p1>
+    
+    </div> 
+    <div width="50%" >
+<p1 style="color:black">IP address:</p1>
+</div>
+<div width="50%" >
+    <input  width="100%" type="text" id="IP_text" name="IP_text"  placeholder="xxx.xxx.xxx.xxx" >
+    </div>
+     <div width="50%" >
+<p1 style="color:black">Mask address:</p1>
+</div>
+<div width="50%" >
+    <input  width="100%" type="text" id="Mask_text" name="IP_text"  placeholder="xxx.xxx.xxx.xxx"  >
+    </div>
+     <div width="50%" >
+<p1 style="color:black">Gateway address:</p1>
+</div>
+<div width="50%" >
+    <input  width="100%" type="text" id="Gateway_text" name="IP_text" placeholder="xxx.xxx.xxx.xxx" >
+    </div>
+   
+     <input type="button" class="buttonSend" value="update" onclick="ValidateIPaddress()" >
+     
+    </div> 
+    
+    
+ <div class="menu">        
+<div class="bloc_button">
+    <p1>ON/OFF all Switch</p1>
+    </div> 
+    
+  <input type="button" class="buttonON" value="ON" onclick="OnOffAll(this.value)">
+   <input type="button" class="buttonOFF" value="OFF" onclick="OnOffAll(this.value)" >
+
+
+    </div>  
+
+   
+
+
+  
+<script>
+function RefreshState() {
+setInterval(function(){
+var xhttp = new XMLHttpRequest();
+xhttp.timeout = 3000; // durée en millisecondes
+var xmlDoc,ID,i,State,txt,s,node_value;
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200)
+    {
+    document.getElementById("status").innerHTML="connected"
+	xmlDoc = this.responseXML;
+	console.log(xmlDoc);
+    	ID = xmlDoc.getElementsByTagName("ID");
+        State= xmlDoc.getElementsByTagName("State");
+        for (i = 0; i < ID.length; i++) 
+        {
+        
+        node_value=State[i].childNodes[0].nodeValue;
+      	s=ID[i].childNodes[0].nodeValue;
+	console.log(s);
+	switch (s) {
+  		case "SW1":
+        	console.log(node_value);
+    		if(node_value=="1")
+            	{              
+             	document.getElementById("SW1").checked = true;
+                }
+             else if(node_value=="0")
+             	{
+                document.getElementById("SW1").checked = false;
+                } 
+   		 	break;
+  		case "SW2":
+        	if(node_value=="1")
+            	{
+             	document.getElementById("SW2").checked = true;
+                }
+             else if(node_value=="0")
+             	{
+                document.getElementById("SW2").checked = false;
+                }       	   			
+    			break;
+  		case "SW3":
+    		if(node_value=="1")
+            	{
+             	document.getElementById("SW3").checked = true;
+                }
+            else if(node_value=="0")
+             	{
+                document.getElementById("SW3").checked = false;
+                } 
+   		 	break;
+  		case "SW4":
+    			if(node_value=="1")
+            	{
+             	document.getElementById("SW4").checked = true;
+                }
+             else if(node_value=="0")
+             	{
+                document.getElementById("SW4").checked = false;
+                } 
+    			break;
+		case "SW5":
+    			if(node_value=="1")
+            	{
+             	document.getElementById("SW5").checked = true;
+                }
+             else if(node_value=="0")
+             	{
+                document.getElementById("SW5").checked = false;
+                } 
+   		 	break;
+  		case "SW6":
+    			if(node_value=="1")
+            	{
+             	document.getElementById("SW6").checked = true;
+                }
+             else if(node_value=="0")
+             	{
+                document.getElementById("SW6").checked = false;
+                } 
+    			break;
+  		case "SW7":
+    			if(node_value=="1")
+            	{
+             	document.getElementById("SW7").checked = true;
+                }
+             else if(node_value=="0")
+             	{
+                document.getElementById("SW7").checked = false;
+                } 
+   		 	 break;
+  		case "SW8":
+    			if(node_value=="1")
+            	{
+             	document.getElementById("SW8").checked = true;
+                }
+             else if(node_value=="0")
+             	{
+                document.getElementById("SW8").checked = false;
+                } 
+    			break;
+                
+                
+            
+                
+  		default:
+    			text = "No value found";
+}
+
+        }
+        
+       
+    }
+  };
+  
+  xhttp.ontimeout = function (e) {
+  document.getElementById("status").innerHTML="disconnected"
+  // Requête qui a expiré. On traite ce cas.
+};
+  xhttp.open("GET", "Switch?", true);
+  xhttp.send();}, 3000);
+  
+}
+
+function SendState()
+{
+  var xhttp = new XMLHttpRequest();
+  var checkboxes = new Array(); 
+  var payload="StateChanged/";
+  var ac="CMD "
+  checkboxes = document.getElementsByTagName('input');
+ console.log(checkboxes); 
+  for (var i=0; i<checkboxes.length; i++)  {
+  	if(checkboxes[i].getAttribute('type')=='checkbox')
+   		 {
+    if (checkboxes[i].checked == true)  
+    {
+     payload = payload.concat("1");
+     }
+     else if (checkboxes[i].checked == false)
+     	{
+        payload = payload.concat("0");       
+        }
+    xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200)
+    {
+    	txt="";
+	xmlDoc = this.responseXML;
+	console.log(xmlDoc);
+    	ID = xmlDoc.getElementsByTagName("ID");
+        State= xmlDoc.getElementsByTagName("State");
+        for (i = 0; i < ID.length; i++) 
+        {
+        
+        
+        node_value=State[i].childNodes[0].nodeValue;
+      	s=ID[i].childNodes[0].nodeValue;
+	console.log(s);
+	switch (s) {
+  		case "SW1":
+        	console.log(node_value);
+    		if(node_value=="1")
+            	{              
+             	document.getElementById("SW1").checked = true;
+                }
+             else if(node_value=="0")
+             	{
+                document.getElementById("SW1").checked = false;
+                } 
+   		 	break;
+  		case "SW2":
+        	if(node_value=="1")
+            	{
+             	document.getElementById("SW2").checked = true;
+                }
+             else if(node_value=="0")
+             	{
+                document.getElementById("SW2").checked = false;
+                }       	   			
+    			break;
+  		case "SW3":
+    		if(node_value=="1")
+            	{
+             	document.getElementById("SW3").checked = true;
+                }
+            else if(node_value=="0")
+             	{
+                document.getElementById("SW3").checked = false;
+                } 
+   		 	break;
+  		case "SW4":
+    			if(node_value=="1")
+            	{
+             	document.getElementById("SW4").checked = true;
+                }
+             else if(node_value=="0")
+             	{
+                document.getElementById("SW4").checked = false;
+                } 
+    			break;
+		case "SW5":
+    			if(node_value=="1")
+            	{
+             	document.getElementById("SW5").checked = true;
+                }
+             else if(node_value=="0")
+             	{
+                document.getElementById("SW5").checked = false;
+                } 
+   		 	break;
+  		case "SW6":
+    			if(node_value=="1")
+            	{
+             	document.getElementById("SW6").checked = true;
+                }
+             else if(node_value=="0")
+             	{
+                document.getElementById("SW6").checked = false;
+                } 
+    			break;
+  		case "SW7":
+    			if(node_value=="1")
+            	{
+             	document.getElementById("SW7").checked = true;
+                }
+             else if(node_value=="0")
+             	{
+                document.getElementById("SW7").checked = false;
+                } 
+   		 	 break;
+  		case "SW8":
+    			if(node_value=="1")
+            	{
+             	document.getElementById("SW8").checked = true;
+                }
+             else if(node_value=="0")
+             	{
+                document.getElementById("SW8").checked = false;
+                } 
+    			break;
+                
+                ac = ac.concat(payload);
+		ac = ac.concat("State : Done") 
+                alert(ac);
+            
+           
+  		
+}
+}
+        }
+        
+       
+    }
+  };
+}
+   console.log(payload); 
+  xhttp.open("GET",payload, true);
+  xhttp.send();
+    
+  
+}
+
+
+function OnOffAll(Button)
+{
+console.log(Button);
+var checkboxes = document.getElementsByTagName('input');
+for (var i=0; i<checkboxes.length; i++)
+	{
+    
+	if(checkboxes[i].getAttribute('type')=='checkbox')
+    {
+    	if(Button=="ON")
+        {
+        	checkboxes[i].checked = true;
+        }
+        if(Button=="OFF")
+        {
+        	checkboxes[i].checked = false;
+        }
+        
+    }
+}
+SendState()
+}
+
+function SendNewIP()
+{
+var xhttp = new XMLHttpRequest();
+var payload = "ChangeIP/"
+var IP=document.getElementById("IP_text").value;
+var Mask=document.getElementById("Mask_text").value;
+var Gateway=document.getElementById("Gateway_text").value;
+payload=payload+IP+"/"+Mask+"/"+Gateway;
+xhttp.open("GET",payload, true);
+xhttp.send();
+}
+window.onload = RefreshState;
+
+function ValidateIPaddress()
+ {
+ var ipformat = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+ if(document.getElementById("IP_text").value.match(ipformat) && document.getElementById("Mask_text").value.match(ipformat) && document.getElementById("Gateway_text").value.match(ipformat) && document.getElementById("IP_text").value.length==15 && document.getElementById("IP_text").value.length==15 && document.getElementById("IP_text").value.length==15)
+ {
+ SendNewIP();
+ 
+ }
+ else
+ {
+ alert("You have entered an invalid IP address!");
+ document.form1.text1.focus();return false;
+ }
+ }
+</script>
+ 
+
+
+
+</body>
+</html>
